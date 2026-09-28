@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroCalc Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">⌁</span>Electro<span>Calc</span></a>
+    <div class="new-tab-label">CALCULATOR WORKSPACE</div>
+    <a class="account-btn back-link" href="index.html#calculators">← All Calculators</a>
+  </header>
+
+  <main class="workspace">
+    <section class="topic-hero">
+      <div>
+        <p class="eyebrow" id="topicCategory">ECE / ENGINEERING</p>
+        <h1 id="topicTitle">Ohm's Law</h1>
+        <p id="topicIntro" class="topic-intro"></p>
+      </div>
+      <div class="topic-badge" id="topicBadge">Ω</div>
+    </section>
+
+    <div class="workspace-grid">
+      <section class="content-column">
+        <article class="info-card">
+          <p class="eyebrow">UNDERSTAND THE TOPIC</p>
+          <h2>What is it?</h2>
+          <p id="topicExplanation"></p>
+        </article>
+
+        <article class="info-card formula-card">
+          <div class="card-heading"><div><p class="eyebrow">MAIN FORMULA</p><h2 id="formulaTitle"></h2></div><span class="formula-symbol">ƒ</span></div>
+          <div class="formula-display" id="formulaDisplay"></div>
+          <p id="formulaNote" class="muted"></p>
+        </article>
+
+        <article class="info-card">
+          <p class="eyebrow">IMPORTANT POINTS</p>
+          <h2>Remember these</h2>
+          <ul id="importantPoints" class="points"></ul>
+        </article>
+
+        <article class="info-card example-card">
+          <p class="eyebrow">WORKED EXAMPLE</p>
+          <h2>See the method</h2>
+          <div id="workedExample" class="worked-example"></div>
+        </article>
+
+        <article class="info-card logic-info hidden" id="truthInfo">
+          <p class="eyebrow">DIGITAL LOGIC</p>
+          <h2>Logic gate basics</h2>
+          <p>Logic gates operate on binary values: <strong>0 = LOW/OFF</strong> and <strong>1 = HIGH/ON</strong>. Choose a gate and the number of inputs in the calculator.</p>
+          <div class="mini-table-wrap"><table class="mini-table"><thead><tr><th>Gate</th><th>Meaning</th><th>Output condition</th></tr></thead><tbody>
+            <tr><td>AND</td><td>All inputs must be 1</td><td>1 only when all are 1</td></tr>
+            <tr><td>OR</td><td>At least one input is 1</td><td>0 only when all are 0</td></tr>
+            <tr><td>NOT</td><td>Inverts input</td><td>0→1 and 1→0</td></tr>
+            <tr><td>NAND</td><td>NOT-AND</td><td>Opposite of AND</td></tr>
+            <tr><td>NOR</td><td>NOT-OR</td><td>Opposite of OR</td></tr>
+            <tr><td>XOR</td><td>Exclusive OR</td><td>1 for an odd number of 1s</td></tr>
+            <tr><td>XNOR</td><td>Exclusive NOR</td><td>1 for an even number of 1s</td></tr>
+          </tbody></table></div>
+        </article>
+      </section>
+
+      <aside class="calculator-column">
+        <div class="sticky-card">
+          <p class="eyebrow">YOUR CALCULATION</p>
+          <h2 id="calculatorTitle">Ohm's Law</h2>
+          <div id="calculatorForm"></div>
+          <button id="calculateBtn" class="primary-btn full">Calculate Result →</button>
+          <div id="result" class="result hidden"></div>
+          <button id="clearBtn" class="text-btn">Clear values</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,33 +1,24 @@
-# ⚡ ElectroCalc
+# ElectroCalc v3 — Learn + Calculate in a New Tab
 
-> Engineering calculations made simple.
+ElectroCalc is a dark-only engineering calculator website for ECE students.
 
-ElectroCalc is an interactive engineering calculator and learning platform designed for students, especially Electronics and Communication Engineering (ECE) students.
+## New in v3
+When a user clicks a calculator on the home page, it opens in a **new browser tab**:
 
-Instead of simply giving an answer, ElectroCalc explains the concept, shows the formula, provides a worked example, and allows the user to perform their own calculation.
+`index.html → calculator.html?calc=ohm`
 
----
+The new calculator workspace contains:
 
-## ✨ Features
+1. **Topic introduction** — what the concept is.
+2. **Main formula** — highlighted separately.
+3. **Important points** — practical things to remember.
+4. **Worked example** — step-by-step method.
+5. **Interactive calculator** — user enters their own values.
+6. **Result** — formula substitution and final answer.
+7. **Calculation history** — stored locally in the browser.
 
-### 🧮 Engineering Calculators
-
-- Ohm's Law
-- Power Calculation
-- Series Resistance
-- Parallel Resistance
-- Capacitor Calculations
-- RC Time Constant
-- Frequency & Wavelength
-- dB Calculations
-- Voltage Divider
-- Electrical Energy
-- Frequency & Period
-
-### 🔢 Digital Logic
-
-Interactive logic gate calculator supporting:
-
+## Logic gates
+The Logic Gate calculator supports:
 - AND
 - OR
 - NOT
@@ -36,44 +27,26 @@ Interactive logic gate calculator supporting:
 - XOR
 - XNOR
 
-The Logic Gate calculator allows the user to select the number of inputs and evaluate the output.
+For multi-input gates, the user can select **1–8 inputs**. NOT automatically uses one input.
 
----
-
-## 📚 Learn While Calculating
-
-ElectroCalc is designed as a learning tool, not just a calculator.
-
-Each calculator provides:
-
-- 📖 Topic explanation
-- 📐 Main formula
-- 💡 Important concepts
-- 📝 Worked example
-- 🧮 Interactive calculation
-- ✅ Step-by-step result
-
----
-
-## 🖥️ New-Tab Calculator Experience
-
-When a calculator is selected, ElectroCalc opens a dedicated calculator page in a new browser tab.
-
-Example:
-
+## File structure
 ```text
-Home
-  ↓
-Choose Calculator
-  ↓
-New Tab
-  ↓
-Topic Explanation
-  ↓
-Formula
-  ↓
-Worked Example
-  ↓
-Interactive Calculator
-  ↓
-Step-by-Step Result
+ElectroCalc/
+├── index.html
+├── calculator.html
+├── calculator.js
+├── calculator.css
+├── style.css
+├── README.md
+└── assets/
+    └── hero-workspace.png
+```
+
+## Run locally
+Open `index.html` using VS Code Live Server, or open it directly in a browser.
+
+## GitHub Pages
+This version uses only HTML, CSS and JavaScript, so it can be hosted as a static GitHub Pages site.
+
+## Authentication
+The login/register UI is still a frontend demonstration using localStorage. Do not use it for real passwords in production. The next version should use Firebase Auth, Supabase Auth, or a Node/Express backend with secure password handling.

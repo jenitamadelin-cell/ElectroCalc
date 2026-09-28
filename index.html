@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroCalc — Engineering Calculators</title>
+  <meta name="description" content="Engineering calculators with formulas, step-by-step solutions and concept explanations for ECE students." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home"><span class="brand-mark">⌁</span>Electro<span>Calc</span></a>
+    <nav>
+      <a class="active" href="#home">Home</a>
+      <a href="#calculators">Calculators</a>
+      <a href="#learn">Learn</a>
+      <a href="#about">About</a>
+    </nav>
+    <button id="accountBtn" class="account-btn">Login / Register</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ENGINEERING CALCULATORS</p>
+        <h1>Build Better<br><em>Solutions.</em></h1>
+        <p class="hero-text">Calculate, understand and learn — with formulas, working steps and concept explanations in one place.</p>
+        <a class="primary-btn" href="#calculators">Explore Calculators <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"></div>
+    </section>
+
+    <section id="calculators" class="calculator-section">
+      <div class="section-heading">
+        <p class="eyebrow">OUR CALCULATORS</p>
+        <h2>Essential Engineering Calculators</h2>
+        <p>Choose a calculator. It opens in a <strong>new tab</strong> with the calculator, formula, detailed explanation, worked example and important points.</p>
+      </div>
+
+      <div class="calculator-grid">
+        <button class="calc-card" data-calc="ohm"><div class="calc-icon">Ω</div><h3>Ohm's Law</h3><p>Voltage, current and resistance.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="power"><div class="calc-icon orange">ϟ</div><h3>Power</h3><p>Electrical power, voltage and current.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="resistance"><div class="calc-icon blue">⌁</div><h3>Resistors</h3><p>Series and parallel resistance.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="capacitor"><div class="calc-icon purple">∥</div><h3>Capacitor</h3><p>Charge, voltage and capacitance.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="rc"><div class="calc-icon">◷</div><h3>RC Time Constant</h3><p>Calculate τ and understand charging.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="wave"><div class="calc-icon red">∿</div><h3>Frequency & Wavelength</h3><p>Frequency, wavelength and wave speed.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="db"><div class="calc-icon gold">dB</div><h3>dB Calculator</h3><p>Power and voltage ratios in dB.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="gate"><div class="calc-icon logic">⊕</div><h3>Logic Gates</h3><p>AND, OR, NOT, NAND, NOR, XOR, XNOR.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="divider"><div class="calc-icon blue">÷</div><h3>Voltage Divider</h3><p>Output voltage using two resistors.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="energy"><div class="calc-icon orange">Wh</div><h3>Electrical Energy</h3><p>Energy from power and time.</p><span>Open in new tab →</span></button>
+        <button class="calc-card" data-calc="period"><div class="calc-icon purple">T</div><h3>Frequency & Period</h3><p>Convert frequency and period.</p><span>Open in new tab →</span></button>
+        <button class="calc-card disabled"><div class="calc-icon gray">+</div><h3>More Coming Soon</h3><p>More ECE tools can be added.</p><span>Stay tuned</span></button>
+      </div>
+    </section>
+
+    <section id="learn" class="learn-panel">
+      <div class="learn-copy">
+        <p class="eyebrow">LEARN BY DOING</p>
+        <h2>Every calculator is also a mini lesson.</h2>
+        <p>When you open a calculator, the new tab explains what the quantity means, highlights the main formula, lists the important points and then lets you perform your own calculation.</p>
+        <a class="secondary-btn" href="#calculators">Start Learning →</a>
+      </div>
+      <div class="features">
+        <div><b>①</b><span>Understand<br>the topic</span></div>
+        <div><b>②</b><span>See the<br>formula</span></div>
+        <div><b>③</b><span>Enter your<br>values</span></div>
+        <div><b>④</b><span>Get worked<br>steps</span></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <p class="eyebrow">ABOUT ELECTROCALC</p>
+      <h2>Engineering made easier.</h2>
+      <p>ElectroCalc is a student-focused project connecting programming with practical electronics, digital logic and engineering calculations.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Electro<span>Calc</span></div>
+    <div>Calculate&nbsp;&nbsp; • &nbsp;&nbsp;Understand&nbsp;&nbsp; • &nbsp;&nbsp;Grow</div>
+    <div>© 2026 ElectroCalc</div>
+  </footer>
+
+  <div id="accountModal" class="modal hidden">
+    <div class="modal-card small">
+      <button class="close" id="closeAccount">×</button>
+      <div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="register">Register</button></div>
+      <div id="authBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const calcCards = document.querySelectorAll('.calc-card[data-calc]');
+    calcCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const calc = card.dataset.calc;
+        window.open(`calculator.html?calc=${encodeURIComponent(calc)}`, '_blank', 'noopener');
+      });
+    });
+
+    const accountModal = document.getElementById('accountModal');
+    const accountBtn = document.getElementById('accountBtn');
+    const authBody = document.getElementById('authBody');
+    const closeAccount = document.getElementById('closeAccount');
+
+    function authHTML(tab='login') {
+      if(tab === 'register') return `<form id="registerForm" class="form-grid">
+        <div class="field"><label>Name</label><input id="regName" required></div>
+        <div class="field"><label>Email</label><input id="regEmail" type="email" required></div>
+        <div class="field"><label>Password</label><input id="regPass" type="password" minlength="6" required></div>
+        <button class="primary-btn full" type="submit">Create Account</button>
+        <p class="auth-note">Demo only: localStorage is used. Use real authentication before production.</p>
+      </form>`;
+      return `<form id="loginForm" class="form-grid">
+        <div class="field"><label>Email</label><input id="loginEmail" type="email" required></div>
+        <div class="field"><label>Password</label><input id="loginPass" type="password" required></div>
+        <button class="primary-btn full" type="submit">Login</button>
+        <p class="auth-note" id="authMessage"></p>
+      </form>`;
+    }
+
+    function renderAuth(tab='login') {
+      document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+      authBody.innerHTML = authHTML(tab);
+      if(tab === 'register') {
+        document.getElementById('registerForm').onsubmit = e => {
+          e.preventDefault();
+          const user = {name:regName.value,email:regEmail.value,password:regPass.value};
+          localStorage.setItem('electrocalc_user', JSON.stringify(user));
+          localStorage.setItem('electrocalc_session', JSON.stringify({name:user.name,email:user.email}));
+          accountModal.classList.add('hidden'); updateAccountButton();
+        };
+      } else {
+        document.getElementById('loginForm').onsubmit = e => {
+          e.preventDefault();
+          const saved = JSON.parse(localStorage.getItem('electrocalc_user') || 'null');
+          const msg = document.getElementById('authMessage');
+          if(saved && saved.email === loginEmail.value && saved.password === loginPass.value) {
+            localStorage.setItem('electrocalc_session', JSON.stringify({name:saved.name,email:saved.email}));
+            accountModal.classList.add('hidden'); updateAccountButton();
+          } else msg.textContent = 'Account not found or password is incorrect.';
+        };
+      }
+    }
+    function updateAccountButton(){
+      const s = JSON.parse(localStorage.getItem('electrocalc_session') || 'null');
+      accountBtn.textContent = s ? `Hi, ${s.name.split(' ')[0]}` : 'Login / Register';
+    }
+    accountBtn.onclick = () => {accountModal.classList.remove('hidden');renderAuth('login');};
+    closeAccount.onclick = () => accountModal.classList.add('hidden');
+    document.querySelectorAll('.tab').forEach(t => t.onclick = () => renderAuth(t.dataset.tab));
+    updateAccountButton();
+  </script>
+</body>
+</html>
